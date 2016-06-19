@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="../node_modules/angular-route/angular-route.js"></script>
+    <script src="../node_modules/angular-bootstrap/ui-bootstrap.js"></script>
+    <script src="../node_modules/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/data.js"></script>
+    <script src="scripts/services/myService.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/bootstrap.css">
+    </head>
+    <body ng-app="profileSearchApp">
+      <h2 style="text-align: center;">Profile Browser</h2>
+      <div class="container" ng-controller="myController">
+      <uib-accordion close-others="true">
+        <uib-accordion-group heading="{{profile.firstName}} {{profile.lastName}}" ng-repeat="profile in profiles | orderBy: 'firstName' ">
+          <div style="width:100%">
+            <p style="font-size: 1.2em; font-weight:bold;">{{profile.firstName}} {{profile.lastName}}</p>
+            <span style="float:left; width: 20%; margin: 0 10px 5px 0">
+              <img src="{{profile.picture}}" style="display:inline-block; box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.2), 0px 6px 20px 2px rgba(0, 0, 0, 0.2); width:100%"/>
+            </span>
+            <span ng-bind="profile.bio"></span>
+          </div>
+        </uib-accordion-group>
+        </uib-accordion>
+      </div>
+    </body>
+</html>
