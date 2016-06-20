@@ -7,9 +7,8 @@ angular.module('profileSearchApp')
 	$scope.profiles[0].selected = true;
 
     $scope.openPanel = function(ngModel){
-    	_.each($scope.profiles, function(profile){
-    		profile.selected = undefined;
-    	});
+    	var selectedProfile = _.find($scope.profiles, function(profile){ return !!profile.selected; });
+    	selectedProfile.selected = undefined;
     	ngModel.selected = !ngModel.selected;
     };
   }]);

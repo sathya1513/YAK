@@ -52,16 +52,38 @@ body {
   max-width:50%
 }
 
-.accordion li {
+.accordion li.default {
   color: #333; 
   background-color: #f5f5f5; 
-  border: #ddd 1px solid; 
+  border: #ddd 1px; 
+  border-style: solid none none solid;
   padding: 10px 15px;
+}
+
+.accordion li.active {
+  color: #333; 
+  background-color: #fff;  
+  border: #ddd 1px; 
+  border-style: solid none none solid;
+  padding: 10px 15px;
+}
+
+.accordion li.first-child {
+  border-radius: 8px 0px 0px 0px;
+}
+
+.accordion li.last-child {
+  border-radius: 0px 0px 0px 8px;
+  border-style: solid none solid solid;
 }
 
 .accordion .panel {
   padding: 5px 10px; 
   border: #ddd 1px solid;
+}
+
+.pointer {
+  cursor:pointer;
 }
 
 /* Responsive: Portrait tablets and up */
