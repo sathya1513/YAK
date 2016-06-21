@@ -8,6 +8,6 @@ angular.module('profileSearchApp')
 				picture: '@', 
 				bioData:'@' 
 			},
-			template: '<p class="strong">{{name}}</p><span class="imgContainer"><img src="{{picture}}" class="displayImg"/></span><span ng-bind="bioData"></span>'
+			template: '<span class="imgContainer"><img src="{{picture}}" class="displayImg"/></span><span><p class="strong desktop">{{name}}</p><p ng-bind="bioData"></p></span>'
 		};
 });
