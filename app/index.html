@@ -12,6 +12,7 @@
     <script src="scripts/data.js"></script>
     <script src="scripts/services/myService.js"></script>
     <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/directives/accordionPanel.js"></script>
     <link rel="stylesheet" href="styles/main.css">
     </head>
     <body ng-app="profileSearchApp">
@@ -21,20 +22,12 @@
           <span ng-repeat="profile in profiles" class="left oneCol">
             <li ng-click="openPanel(profile)" class="pointer" ng-class="{active: profile.selected, default: !profile.selected, 'first-child': $first, 'last-child': $last}">{{profile.firstName}} {{profile.lastName}}</li>
             <div ng-show="profile.selected" class="panel mobile">
-              <p class="strong">{{profile.firstName}} {{profile.lastName}}</p>
-              <span class="imgContainer">
-                <img src="{{profile.picture}}" class="displayImg"/>
-              </span>
-              <span ng-bind="profile.bio"></span>
+             <div accordion-panel name="{{profile.firstName + ' ' + profile.lastName}}" picture="{{profile.picture}}" bio-data="{{profile.bio}}"></div>
             </div>
           </span>
         </ul>
         <span ng-show="profile.selected" class="right blockDisp desktop" ng-repeat="profile in profiles">
-          <p class="strong">{{profile.firstName}} {{profile.lastName}}</p>
-          <span class="imgContainer">
-            <img src="{{profile.picture}}" class="displayImg"/>
-          </span>
-          <span ng-bind="profile.bio"></span>
+           <div accordion-panel name="{{profile.firstName + ' ' + profile.lastName}}" picture="{{profile.picture}}" bio-data="{{profile.bio}}"></div>
         </span>
       </section>
     </body>
