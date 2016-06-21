@@ -111,6 +111,10 @@
 
 /* Responsive: iPhone, mobile */
 @media screen and (max-width: 480px) {
+  body {
+    margin:0px;
+  }
+
   .desktop {
     display:none;
   }
